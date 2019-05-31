@@ -5,4 +5,4 @@ Feature: Check that we are using at least 2 AZs
   Scenario: AZ Count
     Given I have vpc module configured
     When it contains az_count
-    Then its value must match the "[2-9]" regex
+    Then I expect the result is more and equal than 2
