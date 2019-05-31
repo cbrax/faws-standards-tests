@@ -1,19 +1,8 @@
-Feature: Subnets should be defined properly for network security
-  In order to improve security
-  And decrease impact radius
-  As engineers
-  We'll use a layered architecture in our AWS Environment
+Feature: Check that we are using at least 2 AZs
+  In order to improve fault tolerance
+  We'll use multiple availability zones for our subnets
 
-  Scenario: Public Subnet Count
-    Given I have aws_subnet resource configured
-    When it contains map_public_ip_on_launch
-    Then its value must match the "true" regex
-    And When I count them
-    Then I expect the result is more and equal than 2
-
-  Scenario: Private Subnet Count
-    Given I have aws_subnet resource configured
-    When it contains map_public_ip_on_launch
-    Then its value must match the "false" regex
-    And When I count them
-    Then I expect the result is more and equal than 2
+  Scenario: AZ Count
+    Given I have vpc module configured
+    When it contains az_count
+    Then its value must match the "[2-9]" regex
