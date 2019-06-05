@@ -8,4 +8,4 @@ Feature: Check that the VPC complies with the FAWS standards
   Scenario: VPC CIDR Range Compliance
     Given I have vpc module configured
     When it contains cidr_range
-    Then its value must match the "${var.cidr_range}" regex
+    Then its value must match the "10.0.0.0/16" regex
