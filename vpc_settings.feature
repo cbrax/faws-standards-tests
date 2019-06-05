@@ -8,4 +8,4 @@ Feature: Check that the VPC complies with the FAWS standards
   Scenario: VPC CIDR Range Compliance
     Given I have vpc module configured
     When it contains cidr_range
-    Then its value must be set by a variable
+    Then its value must be set by ${var.cidr_range}
