@@ -6,6 +6,6 @@ Feature: Check that the VPC complies with the FAWS standards
     Then I expect the result is more and equal than 2
 
   Scenario: VPC CIDR Range Compliance
-    Given I have cidr_range variable configured
+    Given I have vpc module configured
     When it contains cidr_range
-    Then its value must match the "^(10|127|172\.(1[6-9]|2[0-9]|3[01])|192\.168)\/(1([6-9]))|(2([0-8]))$" regex
+    Then its value must match the "${var.cidr_range}" regex
