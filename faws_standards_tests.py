@@ -23,6 +23,6 @@ class TestBaseNetworkStandards(unittest.TestCase):
     #    self.v.resources("vpc").property("public_cidr_range").
 
 
-if __name__ == 'main':
+if __name__ == '__main__':
     suite = unittest.TestLoader().loadTestsFromTestCase(TestBaseNetworkStandards)
     unittest.TextTestRunner().run(suite)
